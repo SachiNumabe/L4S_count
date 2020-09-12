@@ -12,31 +12,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         var number: Int = 0
         numberTextView.text ="0"
-        fizzBuzz(number)
 
         plusButton.setOnClickListener {
             number += 1
-            numberTextView.text = number.toString()
             fizzBuzz(number)
+            numberTextView.text = number.toString()
         }
         minusButton.setOnClickListener {
             number -= 1
-            numberTextView.text = number.toString()
             fizzBuzz(number)
+            numberTextView.text = number.toString()
         }
         resetButton.setOnClickListener {
             number = 0
             numberTextView.text = number.toString()
-            fizzBuzz(number)
         }
     }
 
     fun fizzBuzz(i:Int){
         when {
-            i % 15 == 0 -> numberTextView.backgroundTintList = ColorStateList.valueOf(Color.rgb(250,0,250))
-            i % 3 == 0 -> numberTextView.backgroundTintList = ColorStateList.valueOf(Color.rgb(250,0,0))
-            i % 5 == 0 -> numberTextView.backgroundTintList = ColorStateList.valueOf(Color.rgb(0,0,250))
-            else -> numberTextView.backgroundTintList = ColorStateList.valueOf(Color.rgb(250,250,250))
+            i % 15 == 0 -> numberTextView.setTextColor(Color.rgb(0,250,0))
+            i % 3 == 0 -> numberTextView.setTextColor(Color.rgb(250,0,0))
+            i % 5 == 0 -> numberTextView.setTextColor(Color.rgb(0,0,250))
+            else -> numberTextView.setTextColor(Color.rgb(0,0,0))
             }
     }
 
